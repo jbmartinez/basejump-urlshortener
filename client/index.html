@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Timestamp Microservice</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" href="app/app.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <style media="screen">
+      .browsehappy {
+          margin: 0.2em 0;
+          background: #ccc;
+          color: #000;
+          padding: 0.2em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h1>API Basejump: Timestamp microservice</h1>
+        </div>
+        <div class="twelve columns">
+          <p>What does this do?</p>
+          <ul>
+            <li>
+              Pass a string as a parameter, and it will check to see
+              whether that string contains either a Unix timestamp or a natural
+              language date (example: January 1, 2016)
+            </li>
+            <li>
+              If it does, it returns both the Unix timestamp and the natural
+              language form of that date.
+            </li>
+            <li>
+              If it does not contain a date or Unix timestamp, it returns null
+              for those properties.
+            </li>
+          </ul>
+          <div class="twelve columns">
+            <h2>Example usage</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+          <h3>Requests</h3>
+<pre><code>https://timestamp-ms.herokuapp.com/December 15, 2015
+https://timestamp-ms.herokuapp.com/1450137600</code></pre>
+        </div>
+        <div class="six columns">
+          <h3>Output</h3>
+          <code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
+        </div>
+      </div>
+    </div>
+
+        <script src="app/app.js"></script>
+</body>
+</html>
