@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title>Timestamp Microservice</title>
+    <title>URL Shortener Microservice</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
-    <link rel="stylesheet" href="app/app.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style media="screen">
       .browsehappy {
@@ -29,23 +28,23 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h1>API Basejump: Timestamp microservice</h1>
+          <h1>API Basejump: URL Shortener microservice</h1>
         </div>
         <div class="twelve columns">
           <p>What does this do?</p>
           <ul>
             <li>
-              Pass a string as a parameter, and it will check to see
-              whether that string contains either a Unix timestamp or a natural
-              language date (example: January 1, 2016)
+              Pass a URL as a parameter and you will receive a shortened URL in
+              the JSON response.
             </li>
             <li>
-              If it does, it returns both the Unix timestamp and the natural
-              language form of that date.
+              If yiu pass an invalid URL that doesn't follow the valid
+              http://www.example.com format, the JSON response will contain an
+              error instead.
             </li>
             <li>
-              If it does not contain a date or Unix timestamp, it returns null
-              for those properties.
+              When you visit that shortened URL, it will redirect you to the
+              original link.
             </li>
           </ul>
           <div class="twelve columns">
@@ -56,16 +55,11 @@
       <div class="row">
         <div class="six columns">
           <h3>Requests</h3>
-<pre><code>https://timestamp-ms.herokuapp.com/December 15, 2015
-https://timestamp-ms.herokuapp.com/1450137600</code></pre>
-        </div>
-        <div class="six columns">
-          <h3>Output</h3>
-          <code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
+          <p>To create a new shortcut use:</p>
+<pre><code>https://hidden-cove-11405.herokuapp.com/new/http://freecodecamp.com/news</code></pre>
         </div>
       </div>
     </div>
 
-        <script src="app/app.js"></script>
 </body>
 </html>
